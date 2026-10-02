@@ -1,32 +1,53 @@
-# React + TypeScript + Vite
+# React Redux Counter
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A counter app built with React, TypeScript and Vite, using Redux for state management without Redux Toolkit. State changes are logged to the browser console with `redux-logger`.
 
-Currently, two official plugins are available:
+## Requirements
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js `20.19.0` or later (or `22.12.0` or later)
+- npm
 
-## React Compiler
+Check your versions:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+node -v
+npm -v
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mr-Eke/wk-4-redux-state-mngt.git
+   ```
+2. Move into the app folder:
+   ```bash
+   cd wk-4-redux-state-mngt/react-redux-app
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open `http://localhost:5173` in your browser.
+
+## Using the App
+
+- **+** increases the counter by 1.
+- **-** decreases the counter by 1.
+- **Reset** sets the counter back to 0.
+
+Open the browser developer tools (F12) and go to the **Console** tab. Each click logs the dispatched action (`INCREMENT`, `DECREMENT` or `RESET`) with the state before and after it.
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the development server at `http://localhost:5173` |
+| `npm run build` | Type-checks the project and builds it into `dist/` |
+| `npm run preview` | Serves the `dist/` build at `http://localhost:4173` (run `npm run build` first) |
+| `npm run lint` | Lints the project with Oxlint |
+
