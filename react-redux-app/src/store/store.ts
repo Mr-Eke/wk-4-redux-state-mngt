@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
-import logger from "redux-logger";
+import { logger } from "redux-logger";
 import { rootReducer } from "./reducers";
 
 // No preloaded state; explicit undefined lets TS pick the enhancer overload
